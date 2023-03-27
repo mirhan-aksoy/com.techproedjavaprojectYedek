@@ -1,12 +1,16 @@
 package day05_RelativeLocators;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+
 import java.time.Duration;
+
 import static org.openqa.selenium.support.locators.RelativeLocator.with;
+
 public class C01_RelativeLocators {
     public static void main(String[] args) {
         /*
@@ -22,7 +26,6 @@ public class C01_RelativeLocators {
         WebDriver driver = new ChromeDriver(new ChromeOptions().addArguments("--remote-allow-origins=*"));
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
-
         //amazon sayfasına gidelim
         driver.get("https://amazon.com");
 
@@ -34,5 +37,7 @@ public class C01_RelativeLocators {
         WebElement hybridBike = driver.findElement(By.xpath("//*[text()='Hybrid Bikes']"));
         WebElement roadBikes = driver.findElement(with(By.tagName("a")).below(hybridBike));
         roadBikes.click();
+        driver.close();
+
     }
 }
