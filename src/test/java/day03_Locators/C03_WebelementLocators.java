@@ -34,5 +34,7 @@ public class C03_WebelementLocators {
         //Sonra karşınıza çıkan ilk sonucun resmine tıklayın.
         List<WebElement> sonuclar = driver.findElements(By.xpath("//h2//a"));
         sonuclar.get(0).click();
+
+        driver.close();
     }
 }

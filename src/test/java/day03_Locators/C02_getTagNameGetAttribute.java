@@ -32,5 +32,7 @@ public class C02_getTagNameGetAttribute {
         if (actualAttribute.equals(expectedAttribute)){
             System.out.println("Test PASSED");
         }else System.out.println("Test FAILED");
+
+        driver.close();
     }
 }
