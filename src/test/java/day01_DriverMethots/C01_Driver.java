@@ -15,11 +15,11 @@ public class C01_Driver {
 
         driver.get("https://www.amazon.com");// get() methodu ile adresini verdiğim sayfaya gider
 
-        System.out.println("sayfa başlıgı" +driver.getTitle()); //içinde bulundugum sayfanın baslıgını getirir
+        System.out.println("sayfa başlıgı=" +driver.getTitle()); //içinde bulundugum sayfanın baslıgını getirir
 
-        System.out.println("sayfa url i "+driver.getCurrentUrl());//içinde bulundugumuz ssayfanın url ini verir
+        System.out.println("sayfa url i "+driver.getCurrentUrl());//içinde bulundugumuz sayfanın url ini getirir
 
-        System.out.println(driver.getPageSource());// bulundugum sayfanın html kaynak kodlarını verir
+       // System.out.println(driver.getPageSource());// bulundugum sayfanın html kaynak kodlarını verir
 
 
     }

@@ -1,4 +1,4 @@
-package day01_practice;
+package practice_day01;
 
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
