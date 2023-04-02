@@ -10,9 +10,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
+import utilities.TestBase;
+
 import java.time.Duration;
 import java.util.List;
-public class C02_DropDown {
+public class C02_DropDown extends TestBase {
     /*
     Given kullanici https://testcenter.techproeducation.com/index.php?page=dropdown sayfasindayken
     -3 farklı test methodu oluşturalım
