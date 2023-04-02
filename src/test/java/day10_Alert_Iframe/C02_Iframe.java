@@ -19,7 +19,8 @@ public class C02_Iframe extends TestBase {
         Örneğin:
             <body>
                 <iframe id="outerIframe" src="https://www.w3schools.com"> --> driver.switchTo().frame("outerIframe");
-                    <iframe id="innerIframe" src="https://www.google.com"></iframe> -->Eğer bir üst frame içinde bir frame daha varsa tekrar driver.switchTo().frame("innerIframe");
+                    <iframe id="innerIframe" src="https://www.google.com"></iframe> -->Eğer
+                     bir üst frame içinde bir frame daha varsa tekrar driver.switchTo().frame("innerIframe");
                 </iframe>
             </body>
         -Index ile yukarıda bahsettiğimiz gibide yapabilirsiniz
@@ -30,7 +31,7 @@ public class C02_Iframe extends TestBase {
         Assert.assertEquals(actualText2,"Applications lists");
 
         //➢   Son olarak footer daki ‘Povered By’ yazisini varligini test edilip
-        driver.switchTo().defaultContent();
+        driver.switchTo().defaultContent();// bütün iframe lerden cıkıyor
         WebElement poveredByYazisi = driver.findElement(By.xpath("//*[text()='Povered By']"));
         Assert.assertTrue(poveredByYazisi.getText().contains("Povered By"));
     }
