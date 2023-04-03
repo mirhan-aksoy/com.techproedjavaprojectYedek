@@ -3,25 +3,30 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import utilities.TestBase;
-import java.util.ArrayList;
-import java.util.List;
+import practice_day02.utilities.TestBase;
+
 import java.util.Set;
 public class C03_WindowHandles extends TestBase {
     @Test
     public void windowHandles() {
         //https://the-internet.herokuapp.com/windows adresine gidin.
         driver.get("https://the-internet.herokuapp.com/windows");
+
         //İlk sayfanın ID'sini(Window Handle değerini) alın.
         String ilkSayfaWindowHandle = driver.getWindowHandle();
+
         //Sayfadaki textin “Opening a new window” olduğunu doğrulayın.
         WebElement sayfaTexti = driver.findElement(By.xpath("//h3"));
         Assert.assertEquals("Opening a new window",sayfaTexti.getText());
+
         //Sayfa başlığının(title) “The Internet” olduğunu doğrulayın.
         String actualTitle = driver.getTitle();
         Assert.assertEquals("The Internet",actualTitle);
+        bekle(3);
+
         //"Click Here" butonuna tıklayın.
         driver.findElement(By.xpath("//*[text()='Click Here']")).click();
+
         //Açılan pencereye geçin.
         /*
             Eğer bir button'a click yaptığımızda bizim kontrolümüz dışında yeni bir pencere açılıyorsa,
@@ -34,7 +39,7 @@ public class C03_WindowHandles extends TestBase {
             if(!w.equals(ilkSayfaWindowHandle)){
                 driver.switchTo().window(w);
             }
-        }//Burda amaç bizim kontrolümüz dışında açılan pencerey geçiş yapmak
+        }//Burda amaç bizim kontrolümüz dışında açılan pencereye geçiş yapmak
 /*
         List<String> tumWindowHandles = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tumWindowHandles.get(1));
@@ -43,13 +48,16 @@ public class C03_WindowHandles extends TestBase {
         String gercekBaslik = driver.getTitle();
         Assert.assertEquals("New Window",gercekBaslik);
         String ikinciSayfaHandleDegeri = driver.getWindowHandle();
+
         //Bir önceki pencereye dönüp sayfa başlığının “The Internet” olduğunu  doğrulayın.
         driver.switchTo().window(ilkSayfaWindowHandle);
         Assert.assertEquals("The Internet",driver.getTitle());
         bekle(3);
+
         //2. pencereye tekrar geçin.
         driver.switchTo().window(ikinciSayfaHandleDegeri);
         bekle(3);
+
         //1. pencereye tekrar dönün.
         driver.switchTo().window(ilkSayfaWindowHandle);
     }

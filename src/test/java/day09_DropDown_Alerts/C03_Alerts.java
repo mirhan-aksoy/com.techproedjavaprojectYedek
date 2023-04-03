@@ -3,7 +3,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import utilities.TestBase;
+import practice_day02.utilities.TestBase;
 public class C03_Alerts extends TestBase {
     /*
     https://testcenter.techproeducation.com/index.php?page=javascript-alerts adresine gidin.

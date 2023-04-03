@@ -3,7 +3,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import utilities.TestBase;
+import practice_day02.utilities.TestBase;
 public class C01_AlertMethods extends TestBase {
     @Test
     public void acceptAlert() throws InterruptedException {
