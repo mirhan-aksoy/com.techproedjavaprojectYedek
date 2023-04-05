@@ -34,7 +34,7 @@ public class C05_Alert {
         driver.get("http://demo.guru99.com/test/delete_customer.php");
         Thread.sleep(2000);
 
-        //customer id kısmına 53920 yazın
+        //customer id kısmına 53920 yazın sendKeys ile seçili yere yazı yazıyorum
         driver.findElement(By.xpath("//input[@name='cusid']")).sendKeys("53920");
         Thread.sleep(2000);
 
@@ -52,7 +52,7 @@ public class C05_Alert {
         Thread.sleep(2000);
 
         //cıkan 2. alert mesajını yazdırın
-        //ALERT VARSA switchto ile driver ı ALERT e gçiriyorum
+        //ALERT VARSA switchto ile driver ı ALERT e gçiriyorum sonra mesajı getText() ile alıyorum
         String alertYazisi2 = driver.switchTo().alert().getText();
         System.out.println("ALERT YAZISI: " + alertYazisi2);
 

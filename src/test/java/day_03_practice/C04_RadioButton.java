@@ -21,7 +21,6 @@ public class C04_RadioButton {
     // option2 elementlerinin secili oldugunu Test edin
     // option1 elementlerinin secili olmadıgını test edin
     // option3 elementlerinin secili olmadıgını test edin
-
     WebDriver driver;
 
     @Before
@@ -36,7 +35,6 @@ public class C04_RadioButton {
     public void tearDown() throws Exception {
         // driver.close();
     }
-
     @Test
     public void name() {
 
@@ -44,10 +42,9 @@ public class C04_RadioButton {
         driver.get("https://demo.guru99.com/test/radio.html");
 
         // radiobutton elementlerini locate edin"//*[@id='vfb-7-1']
-        WebElement option1=driver.findElement(By.xpath("//*[@id='vfb-7-1']"));
+        WebElement option1= driver.findElement(By.xpath("//*[@id='vfb-7-1']"));
         WebElement option2= driver.findElement(By.xpath("//*[@id='vfb-7-2']"));
         WebElement option3= driver.findElement(By.xpath("//*[@id='vfb-7-3']"));
-
 
         // option2'yi secin
       option2.click();
@@ -59,7 +56,7 @@ public class C04_RadioButton {
         // option1 elementlerinin secili olmadıgını test edin
         Assert.assertFalse(option1.isSelected());
 
-        // option3 elementlerinin secili olmadıgını test edin
+        // option3 elementlerinin secili olmadıgını test edin secili olmadıgından false dedim
         Assert.assertFalse(option3.isSelected());
 
 
