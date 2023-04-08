@@ -3,7 +3,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import practice_day02.utilities.TestBase;
+import utilities.TestBase;
 public class C02_Iframe extends TestBase {
     @Test
     public void iframe() {

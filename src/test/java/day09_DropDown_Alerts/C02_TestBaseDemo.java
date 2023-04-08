@@ -1,7 +1,7 @@
 package day09_DropDown_Alerts;
 import org.junit.Assert;
 import org.junit.Test;
-import practice_day02.utilities.TestBase;
+import utilities.TestBase;
 public class C02_TestBaseDemo extends TestBase {
     @Test
     public void test01() {

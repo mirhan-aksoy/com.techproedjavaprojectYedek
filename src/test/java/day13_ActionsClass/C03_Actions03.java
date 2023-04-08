@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import practice_day02.utilities.TestBase;
+import utilities.TestBase;
 
 
 public class C03_Actions03 extends TestBase {

@@ -2,7 +2,7 @@ package day12_WindowHandle_BasicAuth_Cookies;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
-import practice_day02.utilities.TestBase;
+import utilities.TestBase;
 
 import static org.junit.Assert.assertTrue;
 

@@ -2,7 +2,7 @@ package day11_Iframe_WindowHandle;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WindowType;
-import practice_day02.utilities.TestBase;
+import utilities.TestBase;
 import java.util.ArrayList;
 import java.util.List;
 public class C02_WindowHandle extends TestBase {

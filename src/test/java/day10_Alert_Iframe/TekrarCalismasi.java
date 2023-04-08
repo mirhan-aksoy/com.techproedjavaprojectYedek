@@ -3,7 +3,7 @@ package day10_Alert_Iframe;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import practice_day02.utilities.TestBase;
+import utilities.TestBase;
 
 public class TekrarCalismasi extends TestBase {
     //➢   https://testcenter.techproeducation.com/index.php?page=iframe

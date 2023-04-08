@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import practice_day02.utilities.TestBase;
+import utilities.TestBase;
 
 
 import static org.junit.Assert.assertEquals;

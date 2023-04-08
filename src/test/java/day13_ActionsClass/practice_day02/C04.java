@@ -1,4 +1,4 @@
-package practice_day02;
+package day13_ActionsClass.practice_day02;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

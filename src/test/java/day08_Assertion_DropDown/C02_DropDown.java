@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
-import practice_day02.utilities.TestBase;
+import utilities.TestBase;
 
 import java.time.Duration;
 import java.util.List;
