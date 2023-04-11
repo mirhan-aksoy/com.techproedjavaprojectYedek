@@ -1,4 +1,4 @@
-package practice_day01;
+package day_01_practice;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
