@@ -113,12 +113,7 @@ public class C04_StaleElementReferanceException extends TestBase {
                 break;
             }
         }
-
-
-        //Sayfayı kapatalım
-
     }
-
     @Test
     public void StaleElementReferanceExceptionTest6() {
         //Amazon sayfasına gidelim
