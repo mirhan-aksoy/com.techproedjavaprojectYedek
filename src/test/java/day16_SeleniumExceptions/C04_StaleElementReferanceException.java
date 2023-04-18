@@ -113,7 +113,11 @@ public class C04_StaleElementReferanceException extends TestBase {
                 break;
             }
         }
+
+        //Sayfayı kapatalım
+
     }
+
     @Test
     public void StaleElementReferanceExceptionTest6() {
         //Amazon sayfasına gidelim
@@ -121,7 +125,6 @@ public class C04_StaleElementReferanceException extends TestBase {
 
         //iphone aratalım
         driver.findElement(By.id("twotabsearchtextbox")).sendKeys("iphone", Keys.ENTER);
-
         //Çıkan sonuclardan ilk 5'ine tıklayıp sayfa başlıklarını alalım konsola yazdıralım
         List<WebElement> urunler = driver.findElements(By.xpath("//h2"));
         for (int i = 0; i < urunler.size(); i++) {
