@@ -8,7 +8,8 @@ public class C01_Driver {
     public static void main(String[] args) {
 
         System.setProperty("webdriver.http.factory", "jdk-http-client");
-        //System.setProperty java uygulamalarında sistem özelliklerini ayarlamak için kullanılır
+        //System.setProperty java uygulamalarında sistem
+        // özelliklerini ayarlamak için kullanılır
         //Bu method ile class'ımıza webdriver'in fiziki yerini belirtiriz
         //Key, value olarak önce isim sonra driver'imizin yolunu belirtiriz
         WebDriver driver = new ChromeDriver();
