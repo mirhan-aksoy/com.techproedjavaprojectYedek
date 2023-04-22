@@ -13,7 +13,9 @@ public class Hocaninchromeclasi {
             //System.setProperty java uygulamalarında sistem özelliklerini ayarlamak için kullanılır
             //Bu method ile class'ımıza webdriver'in fiziki yerini belirtiriz
             //Key, value olarak önce isim sonra driver'imizin yolunu belirtiriz
-            System.out.println(System.getProperty("edgeDriver"));
+           /* System.out.println(System.getProperty("edgeDriver"));
+
+            */
             //getProperty methodu ile "Key değerini girerek "value"'ya ulaşabilirim
             //WebDriver driver = new EdgeDriver();//Boş bir browser açar
             WebDriver driver = new ChromeDriver(new ChromeOptions().addArguments("--remote-allow-origins=*"));

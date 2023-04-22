@@ -13,7 +13,7 @@ public class C01_Driver {
         // özelliklerini ayarlamak için kullanılır
         //Bu method ile class'ımıza webdriver'in fiziki yerini belirtiriz
         //Key, value olarak önce isim sonra driver'imizin yolunu belirtiriz
-        System.setProperty("webdriver.http.factory", "jdk-http-client");
+        System.setProperty("chromeDriver","src/resources/driver/chromedriver.exe");
         WebDriver driver = new ChromeDriver(new ChromeOptions().addArguments("--remote-allow-origins=*"));
        // WebDriver driver = new ChromeDriver();
 
@@ -36,6 +36,8 @@ public class C01_Driver {
         Thread.sleep(2000);
 
         System.out.println("sayfanın hash kodu"+driver.hashCode());
+
+        driver.close();
 
 
     }
