@@ -26,6 +26,7 @@ public class hocaninclassi {
         //System.out.println(driver.getPageSource());//içinde bulunduğumuz sayfanın html kodlarını verir
 
 
+        driver.close();
 
 
     }
