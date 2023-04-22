@@ -12,7 +12,7 @@ public class Tekrar {
         WebDriver driver = new ChromeDriver(new ChromeOptions().addArguments("--remote-allow-origins=*"));
 
         //yotube a gidelim
-        driver.get("https://www.youtube.com");
+        driver.get("https://www.amazon.com");
         Thread.sleep(2000);
 /*
         System.out.println("sayfa url i"+driver.getCurrentUrl());
@@ -26,6 +26,16 @@ public class Tekrar {
         System.out.println(driver.getWindowHandle());
 */
         driver.navigate().to("https://www.google.com");
+
+        driver.navigate().back();
+        Thread.sleep(2000);
+
+        driver.navigate().forward();
+
+        Thread.sleep(2000);
+        driver.navigate().refresh();
+
+        driver.close();
 
 
 
