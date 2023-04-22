@@ -22,6 +22,8 @@ public class Tekrar {
 
         System.out.println("sayfanın hash kodu"+driver.hashCode());
 
+        System.out.println(driver.getWindowHandle());
+
 
     }
 }
