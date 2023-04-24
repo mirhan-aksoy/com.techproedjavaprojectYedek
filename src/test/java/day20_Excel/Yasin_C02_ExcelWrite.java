@@ -29,7 +29,8 @@ public class Yasin_C02_ExcelWrite {
         //1. Satır 3. sütuna yeni hücre oluştur:
         Cell yeniHucreNufus = sheet1.getRow(0).createCell(2);
         yeniHucreNufus.setCellValue("NÜFUS");
-        System.out.println("yeniHucreNufus = " + yeniHucreNufus);//Henüz excel dosyasına yazdırılmadığı için dosyamızda görünmeyecektir.
+        System.out.println("yeniHucreNufus = " + yeniHucreNufus);//Henüz excel dosyasına yazdırılmadığı için
+        // dosyamızda görünmeyecektir.
 
         sheet1.getRow(1).createCell(2).setCellValue(712816);//Hücreye integer değeri atadık
         sheet1.getRow(2).createCell(2).setCellValue("2161000");//Hücreye String değer atadık
@@ -39,7 +40,8 @@ public class Yasin_C02_ExcelWrite {
 
         FileOutputStream fileOutputStream = new FileOutputStream("src/test/java/resourse/Capitals (2).xlsx");
 
-        workbook.write(fileOutputStream);//WorkBook hafızasına alınan veriyi "src/test/java/resources/Capitals.xlsx" adresindeki dosyaya write() metodu ile kaydettik.
+        workbook.write(fileOutputStream);//WorkBook hafızasına alınan veriyi "src/test/java/resources/Capitals.xlsx"
+        // adresindeki dosyaya write() metodu ile kaydettik.
 
     }
 }

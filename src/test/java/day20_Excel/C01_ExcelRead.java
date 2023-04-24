@@ -50,6 +50,7 @@ public class C01_ExcelRead {
     @Test
     public void readExcelTest2() throws IOException {
 
+        //src/test/java/resourse/Capitals (2).xlsx
         FileInputStream fis = new FileInputStream("src/test/java/resourse/Capitals (2).xlsx");
 
         Workbook workbook = WorkbookFactory.create(fis);
