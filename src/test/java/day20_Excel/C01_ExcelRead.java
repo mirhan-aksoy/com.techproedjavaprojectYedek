@@ -26,27 +26,29 @@ public class C01_ExcelRead {
         //1-Dosya yolunu alırız
 
         // dosya yolu yanlis diyor
+        //src/test/java/resourse/Capitals (2).xlsx
+
        String dosyaYolu ="src/test/java/resourse/Capitals (2).xlsx";
-
        // String dosyaYolu = "src/test/java/resourses/Capitals (2).xlsx";
-
-        //2-Dosyayı okuyabilmek için akışa almam gerekir
+        //2-Dosyayı okuyabilmek için akışa almam gerekir workbook dosyası olarak aç
         FileInputStream fis = new FileInputStream(dosyaYolu);
+
         //FileInputStream fis = new FileInputStream("src/test/java/resourses/Capitals (2).xlsx");
         //3-Java ortamında bir excel dosyası oluşturmamız gerekir
+
         Workbook workbook = WorkbookFactory.create(fis);//create(fis) ile excel'de bu dosyayı okuruz
         //4-Sayfayı(Sheet) seçmemiz gerekir
-        Sheet sheet = workbook.getSheet("Sheet1");
+        Sheet sheet1 = workbook.getSheet("Sheet1");
+
         //5-Satır(Row) seçmemiz gerekir
-        Row row = sheet.getRow(0);//1.satır çünkü index 0 dan başlar
+        Row row = sheet1.getRow(0);//1.satır çünkü index 0 dan başlar
+
         //6-Hücreyi(Cell) seçmemiz gerekir
         Cell cell = row.getCell(0);//1.sütun çünkü index 0 dan başlar
         System.out.println(cell);
     }
     @Test
     public void readExcelTest2() throws IOException {
-
-
 
         FileInputStream fis = new FileInputStream("src/test/java/resourse/Capitals (2).xlsx");
 
