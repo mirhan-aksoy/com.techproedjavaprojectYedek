@@ -46,29 +46,34 @@ public abstract class TestBase {
     }
 
     //HARD WAIT METHOD
-    public static void bekle(int saniye){
+    public static void bekle(int saniye) {
         try {
-            Thread.sleep(saniye*1000);
+            Thread.sleep(saniye * 1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
+
     //Alert ACCEPT
-    public static void alertAccept(){
+    public static void alertAccept() {
         driver.switchTo().alert().accept();
     }
+
     //Alert DISMISS
-    public static void alertDismiss(){
+    public static void alertDismiss() {
         driver.switchTo().alert().dismiss();
     }
+
     //Alert getText()
-    public static void alertText(){
+    public static void alertText() {
         driver.switchTo().alert().getText();
     }
+
     //Alert promptBox
-    public static void alertprompt(String text){
+    public static void alertprompt(String text) {
         driver.switchTo().alert().sendKeys(text);
     }
+
     //DropDown VisibleText
     /*
         Select select2 = new Select(gun);
@@ -76,91 +81,147 @@ public abstract class TestBase {
 
         //ddmVisibleText(gun,"7"); --> Yukarıdaki kullanım yerine sadece method ile handle edebilirim
      */
-    public static void ddmVisibleText(WebElement ddm,String secenek){
+    public static void ddmVisibleText(WebElement ddm, String secenek) {
         Select select = new Select(ddm);
         select.selectByVisibleText(secenek);
     }
+
     //DropDown Index
-    public static void ddmIndex(WebElement ddm,int index){
+    public static void ddmIndex(WebElement ddm, int index) {
         Select select = new Select(ddm);
         select.selectByIndex(index);
     }
+
     //DropDown Value
-    public static void ddmValue(WebElement ddm,String secenek){
+    public static void ddmValue(WebElement ddm, String secenek) {
         Select select = new Select(ddm);
         select.selectByValue(secenek);
     }
+
     //SwitchToWindow1
-    public static void switchToWindow(int sayi){
+    public static void switchToWindow(int sayi) {
         List<String> tumWindowHandles = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tumWindowHandles.get(sayi));
     }
+
     //SwitchToWindow2
-    public static void window(int sayi){
+    public static void window(int sayi) {
         driver.switchTo().window(driver.getWindowHandles().toArray()[sayi].toString());
     }
     //EXPLICIT WAIT METHODS
 
     //Visible Wait
-    public static void visibleWait(WebElement element,int sayi){
+    public static void visibleWait(WebElement element, int sayi) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(sayi));
         wait.until(ExpectedConditions.visibilityOf(element));
 
     }
+
     //VisibleElementLocator Wait
-    public static WebElement visibleWait(By locator, int sayi){
+    public static WebElement visibleWait(By locator, int sayi) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(sayi));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 
     }
+
     //Alert Wait
-    public static void alertWait(int sayi){
+    public static void alertWait(int sayi) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(sayi));
         wait.until(ExpectedConditions.alertIsPresent());
 
     }
+
     //Tüm Sayfa ScreenShot
-    public static void tumSayfaResmi(){
+    public static void tumSayfaResmi() {
         String tarih = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date());
-        String dosyaYolu = "TestOutput/screenshot/screenshot"+tarih+".png";
+        String dosyaYolu = "TestOutput/screenshot/screenshot" + tarih + ".png";
         TakesScreenshot ts = (TakesScreenshot) driver;
         try {
-            FileUtils.copyFile(ts.getScreenshotAs(OutputType.FILE),new File(dosyaYolu));
+            FileUtils.copyFile(ts.getScreenshotAs(OutputType.FILE), new File(dosyaYolu));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
     //WebElement ScreenShot
-    public static void webElementResmi(WebElement element){
+    public static void webElementResmi(WebElement element) {
         String tarih = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date());
-        String dosyaYolu = "TestOutput/screenshot/webElementScreenshot"+tarih+".png";
+        String dosyaYolu = "TestOutput/screenshot/webElementScreenshot" + tarih + ".png";
 
         try {
-            FileUtils.copyFile(element.getScreenshotAs(OutputType.FILE),new File(dosyaYolu));
+            FileUtils.copyFile(element.getScreenshotAs(OutputType.FILE), new File(dosyaYolu));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
     //ExtentReport
-    public void extentReport(){
+    public void extentReport() {
         extentReports = new ExtentReports();
         String tarih = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date());
-        String dosyaYolu = "TestOutput/reports/extentReport_"+tarih+".html";
+        String dosyaYolu = "TestOutput/reports/extentReport_" + tarih + ".html";
         extentHtmlReporter = new ExtentHtmlReporter(dosyaYolu);
         extentReports.attachReporter(extentHtmlReporter);
 
         //Raporda gözükmesini istediğimiz bilgiler için
-        extentReports.setSystemInfo("Browser","Chrome");
-        extentReports.setSystemInfo("Tester","Erol");
+        extentReports.setSystemInfo("Browser", "Chrome");
+        extentReports.setSystemInfo("Tester", "Erol");
         extentHtmlReporter.config().setDocumentTitle("Extent Report");
         extentHtmlReporter.config().setReportName("Smoke Test Raporu");
     }
+
     //WebTable
-    public void printData(int satir, int sutun){
-        WebElement satirSutun = driver.findElement(By.xpath("(//tbody)[1]//tr["+satir+"]//td["+sutun+"]"));
+    public void printData(int satir, int sutun) {
+        WebElement satirSutun = driver.findElement(By.xpath("(//tbody)[1]//tr[" + satir + "]//td[" + sutun + "]"));
         System.out.println(satirSutun.getText());
     }
 
+    //Bu method ile herhangi bir elemente JS Executer kullanarak tıklayabilirim:
+    public void clickByJS(WebElement element) {
 
+        JavascriptExecutor jsExecuter = (JavascriptExecutor) driver;
+        jsExecuter.executeScript("arguments[0].click();", element);
+
+    }
+
+    //Bu method ile herhangi bir elemente JS Executer kullanarak ekranı kaydırma yapabilirim:
+    public void scrollIntoView(WebElement element) {
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
+
+    }
+
+    //Bu method ile sayfayı en alta kayıdırabilirim:
+    public void scrollEndJS() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+    }
+
+    //Bu method ile sayfayı en üste kayıdırabilirim:
+    public void scrollTopJS() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0,-document.body.scrollHeight)");
+    }
+
+    //Bu method sendKeys() methodunun alternatifidir.
+    public void typeWithJS(String text, WebElement element) {
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].setAttribute('value','" + text + "')", element);
+
+    }
+
+    //Bu method ile attribute değerlerini alabilirim:
+    public void getValueByJS(String id, String attributeName) {
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String attribute_Value = js.executeScript("return document.getElementById('" + id + "')." + attributeName).toString();
+        System.out.println("Attribute Value: = " + attribute_Value);
+//        NOT: document.querySelector("p").value;  -> TAG KULLANILABILIR
+//             document.querySelector(".example").value; -> CSS DEGERI KULLANILABILIR
+//             document.querySelector("#example").value; -> CSS DEGERI KULLANILABILIR
+
+
+    }
 }
