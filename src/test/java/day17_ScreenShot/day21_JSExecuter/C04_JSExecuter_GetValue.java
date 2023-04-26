@@ -1,4 +1,4 @@
-package day21_JSExecuter;
+package day17_ScreenShot.day21_JSExecuter;
 
 import org.junit.Test;
 import org.openqa.selenium.By;

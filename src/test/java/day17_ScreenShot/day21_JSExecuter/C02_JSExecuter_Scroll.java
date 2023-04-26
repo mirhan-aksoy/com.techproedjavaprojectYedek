@@ -1,4 +1,4 @@
-package day21_JSExecuter;
+package day17_ScreenShot.day21_JSExecuter;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -54,5 +54,14 @@ public class C02_JSExecuter_Scroll extends TestBase {
         //Sayfayı en üste kaydır:
         scrollTopJS();
 
+    }
+
+    private void scrollEndJS() {
+    }
+
+    private void scrollTopJS() {
+    }
+
+    private void scrollIntoView(WebElement enrollFree) {
     }
 }

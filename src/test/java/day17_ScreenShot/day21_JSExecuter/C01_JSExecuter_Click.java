@@ -1,4 +1,4 @@
-package day21_JSExecuter;
+package day17_ScreenShot.day21_JSExecuter;
 
 import com.github.javafaker.Faker;
 import org.junit.Test;
@@ -44,5 +44,8 @@ public class C01_JSExecuter_Click extends TestBase {
 //        Sayfa adresinin "http://www.uitestpractice.com/Students/Form?optradio=on" olduğunu doğrula.
         assertEquals("http://www.uitestpractice.com/Students/Form?",driver.getCurrentUrl());
 
+    }
+
+    private void clickByJS(WebElement submitButton) {
     }
 }
